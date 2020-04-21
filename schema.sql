@@ -1,0 +1,14 @@
+CREATE TABLE "Post" ( 
+    "authorId" INTEGER REFERENCES "User"(id) ON DELETE SET NULL, 
+    "content" TEXT, 
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+    "published" BOOLEAN NOT NULL DEFAULT false, 
+    "title" TEXT NOT NULL 
+)
+
+
+CREATE TABLE "User" ( 
+	"email" TEXT NOT NULL UNIQUE, 
+	"id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, 
+	"name" TEXT 
+)
